@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You | Order Confirmed</title>
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="description" content="Payment successful. Access your product and receipt here." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1115; --card:#131721; --muted:#8891a7; --text:#e9eefb;
+      --gold:#F2C14E; --gold-strong:#E2B53E; --accent:#4CAF50; --danger:#ff5e5e;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; background:
+      radial-gradient(1200px 600px at 10% 10%, #182034 0%, rgba(24,32,52,0) 70%),
+      radial-gradient(1000px 500px at 90% 0%, #1b2030 0%, rgba(27,32,48,0) 65%),
+      var(--bg);
+      color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .wrap{width:min(1050px,100%); display:grid; gap:22px}
+    .brand{display:flex; align-items:center; gap:12px; opacity:.95}
+    .logoBox{width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--gold),#ffe39c); overflow:hidden}
+    .logoBox img{width:100%; height:100%; object-fit:cover; display:none}
+    .brand h1{font-size:18px; margin:0; letter-spacing:.3px; font-weight:800}
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:var(--radius); padding:28px; box-shadow:var(--shadow);
+      display:grid; gap:22px;
+    }
+    .hero{display:flex; gap:22px; align-items:center; flex-wrap:wrap}
+    .tick{
+      width:64px; height:64px; border-radius:18px; background:rgba(76,175,80,.12);
+      display:grid; place-items:center; border:1px solid rgba(76,175,80,.35);
+      animation:pop .5s ease-out;
+    }
+    .tick svg{width:32px; height:32px; color:var(--accent)}
+    @keyframes pop{from{transform:scale(.8); opacity:0} to{transform:scale(1); opacity:1}}
+    .h-title{margin:0; font-size:28px; font-weight:800; letter-spacing:.2px}
+    .h-sub{margin:0; color:var(--muted)}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:720px){ .grid{grid-template-columns:1fr} }
+    .panel{
+      background:var(--card); border:1px solid rgba(255,255,255,.08);
+      border-radius:14px; padding:18px;
+    }
+    .panel h3{margin:0 0 10px 0; font-size:15px; color:#b7c2de; letter-spacing:.2px}
+    .rows{display:grid; gap:10px}
+    .row{display:flex; justify-content:space-between; gap:10px; font-size:14px}
+    .row .k{color:#b7c2de} .row .v{color:#f6fbff; font-weight:600}
+    .btns{display:flex; flex-wrap:wrap; gap:12px}
+    .btn{
+      appearance:none; border:1px solid rgba(242,193,78,.5);
+      background:linear-gradient(180deg,var(--gold),var(--gold-strong));
+      color:#111; font-weight:800; padding:12px 18px; border-radius:12px;
+      cursor:pointer; text-decoration:none; box-shadow:0 6px 16px rgba(242,193,78,.25);
+      transition:transform .15s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px); filter:saturate(1.1); box-shadow:0 12px 26px rgba(242,193,78,.34)}
+    .btn.secondary{
+      background:transparent; color:var(--text); border-color:rgba(255,255,255,.18); box-shadow:none;
+    }
+    .note{color:var(--muted); font-size:13px}
+    .divider{height:1px; background:rgba(255,255,255,.08); margin:2px 0}
+    .err{background:rgba(255,94,94,.1); border:1px solid rgba(255,94,94,.4); color:#ffdcdc; border-radius:10px; padding:12px; display:none}
+    footer{opacity:.8; text-align:center; font-size:12px; margin-top:6px}
+    code.bubble{
+      background:#0b0d12; border:1px solid rgba(255,255,255,.09);
+      padding:4px 8px; border-radius:8px; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+  </style>
+
+  <!-- Meta Pixel (YOUR config) -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  const ZERO_PIXEL_ID='1740037713287166';   // << your pixel
+  fbq('init', ZERO_PIXEL_ID);
+  fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1740037713287166&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <!-- Confetti -->
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">
+      <div class="logoBox" id="logoBox">
+        <!-- If you upload logo.png to repo root, it will appear -->
+        <img id="logoImg" src="logo.png" alt="Claryon Logo" onload="this.style.display='block'">
+      </div>
+      <h1>CLARYON</h1>
+    </div>
+
+    <section class="card">
+      <div id="err" class="err">Payment not verified. If you reached here by mistake or closed checkout early, contact support on WhatsApp.</div>
+
+      <div class="hero">
+        <div class="tick" id="tick" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="h-title" id="title">Payment Successful</h2>
+          <p class="h-sub" id="subtitle">Your order is confirmed. Access details are below.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Order Summary</h3>
+          <div class="rows">
+            <div class="row"><span class="k">Product</span><span class="v" id="p-name">The Career Rewire</span></div>
+            <div class="row"><span class="k">Amount</span><span class="v"><span id="amount">₹299</span> <span id="curr">INR</span></span></div>
+            <div class="row"><span class="k">Payment ID</span><span class="v"><span id="pid">—</span></span></div>
+            <div class="row"><span class="k">Buyer</span><span class="v" id="buyer">—</span></div>
+            <div class="row"><span class="k">Email</span><span class="v" id="email">—</span></div>
+          </div>
+          <div class="divider"></div>
+          <div class="note">Keep your <strong>Payment ID</strong> for support. We’ve sent the receipt to your email.</div>
+        </div>
+
+        <div class="panel">
+          <h3>Next Steps</h3>
+          <div class="rows" style="margin-bottom:12px">
+            <div class="note">Use the buttons below to access your product, join Telegram, or contact support.</div>
+          </div>
+          <div class="btns">
+            <a id="downloadBtn" class="btn" href="https://imojo.in/1C0rIEl" target="_blank" rel="noopener">Download Product</a>
+            <a id="tgBtn" class="btn secondary" href="https://t.me/claryonofficial" target="_blank" rel="noopener">Join Telegram</a>
+            <a id="waBtn" class="btn secondary" href="#" target="_blank" rel="noopener">WhatsApp Support</a>
+          </div>
+          <div class="note" id="redirectNote" style="display:none;margin-top:10px;">
+            Auto-redirecting to your download in <span id="secs">7</span>s…
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        Need help? Email <span class="bubble" id="supportMail">contactclaryon.official@gmail.com</span>
+        with your <code class="bubble" id="pid2">PAYMENT_ID</code>.
+      </div>
+    </section>
+    <footer>© <span id="yr"></span> Claryon Labs · All rights reserved</footer>
+  </main>
+
+  <script>
+  (function(){
+    // ---------- URL params (Instamojo can append these) ----------
+    const q = new URLSearchParams(location.search);
+    const status = (q.get('status') || '').toLowerCase();    // "successful"
+    const pid    = (q.get('payment_id') || '').trim();
+    const amount = parseFloat(q.get('amount') || '299');
+    const curr   = (q.get('currency') || 'INR').toUpperCase();
+    const prod   = (q.get('product') || 'The Career Rewire').trim();
+    const email  = (q.get('email') || '').trim();
+    const buyer  = (q.get('buyer') || '').trim();
+    const dl     = q.get('dl') || 'https://imojo.in/1C0rIEl';     // default download/product link
+    const auto   = (q.get('auto') || '1') === '1';                 // auto redirect default true
+    const tg     = q.get('tg') || 'https://t.me/claryonofficial';
+
+    const $$ = id => document.getElementById(id);
+    $$('#yr').textContent = new Date().getFullYear();
+    $$('#p-name').textContent = prod;
+    $$('#amount').textContent = isFinite(amount) ? (curr==='INR'?'₹':'') + amount : '₹299';
+    $$('#curr').textContent = curr;
+    $$('#pid').textContent = pid || '—';
+    $$('#pid2').textContent = pid || '—';
+    $$('#email').textContent = email || '—';
+    $$('#buyer').textContent = buyer || '—';
+
+    // Telegram + WhatsApp links
+    document.getElementById('tgBtn').href = tg;
+    const waNumber = '919503228535'; // +91 9503228535
+    const waText = 'Hi Claryon, I need help with my order ' + (pid || '');
+    document.getElementById('waBtn').href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waText);
+
+    // Download button
+    const dlBtn = document.getElementById('downloadBtn');
+    dlBtn.href = dl;
+    dlBtn.classList.toggle('secondary', !dl || dl === '#');
+
+    // Success or pending state
+    const ok = status === 'successful' || status === 'success' || status === 'paid' || status === '';
+    if(!ok){
+      document.getElementById('title').textContent = 'Pending / Unverified';
+      document.getElementById('subtitle').textContent = 'We could not verify your payment automatically. Please contact support with your Payment ID.';
+      document.getElementById('err').style.display = 'block';
+      const t = document.getElementById('tick');
+      t.style.borderColor = 'rgba(255,94,94,.55)';
+      t.style.background = 'rgba(255,94,94,.12)';
+    } else {
+      // Confetti celebration
+      const blast = ()=> { if (window.confetti) confetti({ particleCount: 120, spread: 66, origin: { y: .25 } }); };
+      setTimeout(blast, 220); setTimeout(blast, 700);
+      // Optional auto-redirect
+      if(dl && dl !== '#' && auto){
+        let t = 7;
+        const note = document.getElementById('redirectNote'); note.style.display='block';
+        const timer = setInterval(()=>{ document.getElementById('secs').textContent = --t; if(t<=0){ clearInterval(timer); location.href = dl; }},1000);
+      }
+    }
+
+    // Pixel Purchase guard (fires once per payment_id)
+    const key = pid ? 'purchase_fired_'+pid : 'purchase_fired_generic';
+    if((status === 'successful' || status === 'success' || status === 'paid') && !sessionStorage.getItem(key)){
+      fbq('track','Purchase',{ value: isFinite(amount)? amount : 299, currency: curr || 'INR' });
+      sessionStorage.setItem(key,'1');
+    }
+  })();
+  </script>
+</body>
+</html>
